@@ -44,5 +44,5 @@ void RootClass::buttonClick(int id){
 QString RootClass::pdfClick(QString name){
     qDebug()<<"pdfClick go   : "<<name;
     QDir r;
-    return r.homePath()+QDir::separator() + name;
+    return r.homePath()+QDir::separator()+"pdf" +QDir::separator()+ name;
 }

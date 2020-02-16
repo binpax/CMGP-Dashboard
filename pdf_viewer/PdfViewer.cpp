@@ -6,7 +6,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 
-#include <poppler/qt5/poppler-qt5.h>
+#include <pdf_viewer/poppler-qt5.h>
 
 namespace pdf_viewer {
 
@@ -98,7 +98,7 @@ PdfViewer::setSource(
 
         // Emit new source signal as soon as new document object is retrieved:
         mSource = source;
-        mInfo->setInformation(mDocument->title(), mDocument->author(), mDocument->creator(), mDocument->creationDate(), mDocument->modificationDate());
+        mInfo->setInformation(mDocument->info("Title"), mDocument->info("Author"), mDocument->info("Creator"), QDateTime::currentDateTime(), QDateTime::currentDateTime());
         emit sourceChanged();
         emit infoChanged();
 

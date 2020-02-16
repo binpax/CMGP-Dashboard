@@ -11,13 +11,12 @@ ApplicationWindow {
         id: swipeView
         anchors.fill: parent
         currentIndex: tabBar.currentIndex
-        //Dashboard{}
-        Page1Form {
+        Dashboard{
+        }
+        PdfList {
         }
         Page2Form {
         }
-        PdfViewer{}
-
     }
 
     footer: TabBar {

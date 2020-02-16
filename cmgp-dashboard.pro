@@ -14,7 +14,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 QML_IMPORT_PATH += $$PWD
 QML_IMPORT_PATH2 += /home/ahmed/Qt/5.12.5/gcc_64/qml/QtQuick/Shapes
 QML_IMPORT_PATH += /home/ahmed/Qt/5.12.5/gcc_64/qml/QtQuick/Shapes
-LIBS += -lpoppler-qt5
+LIBS += -Wl,--unresolved-symbols=ignore-all -lpoppler-qt5
 SOURCES += \
         filedownloader.cpp \
         main.cpp \
@@ -35,6 +35,24 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     filedownloader.h \
+    pdf_viewer/poppler-annotation-helper.h \
+    pdf_viewer/poppler-annotation-private.h \
+    pdf_viewer/poppler-annotation.h \
+    pdf_viewer/poppler-converter-private.h \
+    pdf_viewer/poppler-embeddedfile-private.h \
+    pdf_viewer/poppler-export.h \
+    pdf_viewer/poppler-form.h \
+    pdf_viewer/poppler-link-extractor-private.h \
+    pdf_viewer/poppler-link.h \
+    pdf_viewer/poppler-media.h \
+    pdf_viewer/poppler-optcontent-private.h \
+    pdf_viewer/poppler-optcontent.h \
+    pdf_viewer/poppler-page-private.h \
+    pdf_viewer/poppler-page-transition-private.h \
+    pdf_viewer/poppler-page-transition.h \
+    pdf_viewer/poppler-private.h \
+    pdf_viewer/poppler-qiodeviceoutstream-private.h \
+    pdf_viewer/poppler-qt5.h \
     rootclass.h
 
 

@@ -2,6 +2,12 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 
 Item {
+    Loader {
+        id: windowLoader
+        source: "Welcome.qml"
+        focus: true
+        property bool valid: item !== null
+    }
     ScrollView {
         anchors.fill: parent
 
@@ -14,6 +20,7 @@ Item {
                 onClicked: {
                     var ret = rootclass.pdfClick(modelData)
                     console.log("test"  + ret)
+                    windowLoader.setSource("qrc:/PdfViewer.qml", {"sourcePath": ret});
                 }
             }
         }
