@@ -13,7 +13,7 @@ Page {
     Image {
         id: image
         anchors.fill: parent
-        source: "images/vues/2.png"
+        source: "images/vues"
         fillMode: Image.PreserveAspectFit
     }
 }

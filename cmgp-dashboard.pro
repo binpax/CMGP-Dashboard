@@ -10,11 +10,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0 -Wl,--unresolved-symbols=ignore-all
 QML_IMPORT_PATH += $$PWD
 QML_IMPORT_PATH2 += /home/ahmed/Qt/5.12.5/gcc_64/qml/QtQuick/Shapes
 QML_IMPORT_PATH += /home/ahmed/Qt/5.12.5/gcc_64/qml/QtQuick/Shapes
-LIBS += -Wl,--unresolved-symbols=ignore-all -lpoppler-qt5
+LIBS += -lpoppler-qt5
 SOURCES += \
         filedownloader.cpp \
         main.cpp \
