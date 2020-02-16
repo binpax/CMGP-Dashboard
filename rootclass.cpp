@@ -37,8 +37,8 @@ RootClass::RootClass(){
     }
 }
 
-void RootClass::buttonClick(int id){
-    qDebug()<<"buttonClick go   : "<<id;
+void RootClass::buttonClick(int id, bool state){
+    qDebug()<<"buttonClick go   : "<<id<<state;
 }
 
 QString RootClass::pdfClick(QString name){
