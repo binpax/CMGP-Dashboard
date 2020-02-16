@@ -9,7 +9,7 @@ static void updateOutput(QString s, char addr, bool state){
     serial.setStopBits(QSerialPort::OneStop);
     serial.setFlowControl(QSerialPort::NoFlowControl);
     QByteArray buff;
-    buff[0] = 0x06 + !state;
+    buff[0] = 0x06+(int)state;
     buff[1] = 0x00;
     buff[2] = addr;
     buff[3] = buff[2]^buff[1]^buff[0] ;
@@ -17,6 +17,7 @@ static void updateOutput(QString s, char addr, bool state){
         qDebug()<<"Connectedd"<<buff;
         serial.write(buff);
         serial.waitForBytesWritten();
+        QThread::msleep(500);
         serial.close();
     } else {
         qDebug()<<"Open error"<<serial.error();
@@ -24,6 +25,7 @@ static void updateOutput(QString s, char addr, bool state){
 }
 
 RootClass::RootClass(){
+    updateOutput("/dev/ttyUSB0",1,true);
     auto folder_home = QDir::home();
     if(folder_home.cd("pdf")){
         qDebug()<<"ok ";
@@ -37,8 +39,17 @@ RootClass::RootClass(){
     }
 }
 
-void RootClass::buttonClick(int id, bool state){
-    qDebug()<<"buttonClick go   : "<<id<<state;
+void RootClass::buttonClick(unsigned int id, bool state){
+    if (id > 16 ){
+        updateOutput("/dev/ttyUSB2",1<<(id-16),!state);
+        return;
+    }
+    if (id > 8 ){
+        updateOutput("/dev/ttyUSB1",id-8,!state);
+        return;
+    }
+    updateOutput("/dev/ttyUSB0",1<<id,!state);
+    qDebug()<<"buttonClick go : "<<id<<state;
 }
 
 QString RootClass::pdfClick(QString name){

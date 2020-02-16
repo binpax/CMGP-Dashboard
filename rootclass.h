@@ -18,7 +18,7 @@ public:
 
     RootClass();
     Q_INVOKABLE QStringList getQStringList(){ return dataList;}
-    Q_INVOKABLE void buttonClick(int id, bool state);
+    Q_INVOKABLE void buttonClick(unsigned int id, bool state);
     Q_INVOKABLE QString pdfClick(QString name);
 };
 
