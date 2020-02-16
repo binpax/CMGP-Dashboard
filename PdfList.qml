@@ -4,7 +4,6 @@ import QtQuick.Controls 2.4
 Item {
     Loader {
         id: windowLoader
-        source: "Welcome.qml"
         focus: true
         property bool valid: item !== null
     }
