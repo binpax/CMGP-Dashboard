@@ -1,10 +1,12 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.5
+import QtQuick.Controls 2.4
 
 ApplicationWindow {
     visible: true
     width: 640
     height: 480
+    visibility: "FullScreen"
+
     title: qsTr("Tabs")
 
     SwipeView {

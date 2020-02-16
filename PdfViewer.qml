@@ -12,6 +12,8 @@ import org.docviewer.poppler 1.0
 ApplicationWindow {
     id: mainPdfV
     visible: true
+    visibility: "FullScreen"
+
     width: 1024
     height: 768
     title: qsTr("Poppler plugin example")
