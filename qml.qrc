@@ -18,5 +18,6 @@
         <file>Circle.qml</file>
         <file>Button.qml</file>
         <file>Buttonv2.qml</file>
+        <file>img/MODEL1.jpg</file>
     </qresource>
 </RCC>

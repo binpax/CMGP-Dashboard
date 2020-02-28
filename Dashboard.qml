@@ -16,8 +16,8 @@ Image {
 
         anchors.left: parent.left
         anchors.leftMargin: parent.width/100
-        anchors.bottom: sideB2.top
-        anchors.bottomMargin: parent.width/80
+        anchors.top: parent.top
+        anchors.topMargin: (380/staticw)*image1.width
 
         width: sideB2.width
         height: width
@@ -38,8 +38,8 @@ Image {
 
         anchors.left: parent.left
         anchors.leftMargin: parent.width/100
-        anchors.verticalCenter: parent.verticalCenter
-
+        anchors.top: parent.top
+        anchors.topMargin: (380/staticw)*image1.width
         width: parent.width / 18
         height: width
         color: switcher ? "#5caa15" : "#80c342"

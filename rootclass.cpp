@@ -15,8 +15,7 @@ void SyslogMessageHandler(QtMsgType type, const QMessageLogContext &context, con
           syslog(LOG_INFO, "Example2 (info): %s", localMsg.constData());
           break;
       case QtWarningMsg:
-          fprin    qDebug()<<"buttonClick go : "<<id<<state;
-tf(stderr, "Warning: %s\n", localMsg.constData());
+          fprintf(stderr, "Warning: %s\n", localMsg.constData());
           syslog(LOG_WARNING, "Example2 (warning): %s", localMsg.constData());
           break;
       case QtCriticalMsg:

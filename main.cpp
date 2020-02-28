@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QScreen>
 
 #include "rootclass.h"
 #include "pdf_viewer/PdfViewer.h"
@@ -16,6 +17,12 @@ int main(int argc, char *argv[])
 
 
     QGuiApplication app(argc, argv);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect  screenGeometry = screen->geometry();
+    int height = screenGeometry.height();
+    int width = screenGeometry.width();
+    qInfo()<<"main height"<<height<<"width"<<width;
+
     RootClass rootclass;
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:/");
@@ -26,9 +33,10 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+    engine.rootContext()->setContextProperty( "rootclass", &rootclass );
+
     engine.load(url);
     //engine.rootContext()->setContextProperty("myModel", QVariant::fromValue(dataList));
 
-    engine.rootContext()->setContextProperty( "rootclass", &rootclass );
     return app.exec();
 }
