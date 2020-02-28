@@ -7,6 +7,9 @@
 #include "filedownloader.h"
 #include <QDebug>
 #include <QSerialPort>
+#include <QScreen>
+
+static QScreen *screen;
 static constexpr int Version  = 1;
 void SyslogMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
