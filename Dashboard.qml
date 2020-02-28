@@ -9,12 +9,27 @@ Image {
     property int staticw: 1028
     property int statich: 570
     Label{
+        id : id1
         text: image1.width
     }
     Label{
+        id : id2
+
         text: image1.height
         anchors.horizontalCenter: parent.horizontalCenter
     }
+    onHeightChanged: {
+        id2.text = image1.height + "test"
+    }
+    onWidthChanged: {
+        id1.text = image1.width
+    }
+
+    Component.onCompleted: {
+
+
+    }
+
     Buttonv2 {
         id: sideB1
 
