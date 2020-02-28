@@ -9,11 +9,142 @@ Image {
     property int staticw: 1028
     property int statich: 570
 
+    Buttonv2 {
+        id: sideB1
+
+        property bool switcher
+
+        anchors.left: parent.left
+        anchors.leftMargin: parent.width/100
+        anchors.bottom: sideB2.top
+        anchors.bottomMargin: parent.width/80
+
+        width: sideB2.width
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor1"
+        fontHeight: 0.4
+
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+    Buttonv2 {
+        id: sideB2
+
+        property bool switcher
+
+        anchors.left: parent.left
+        anchors.leftMargin: parent.width/100
+        anchors.verticalCenter: parent.verticalCenter
+
+        width: parent.width / 18
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor2"
+        fontHeight: 0.4
+
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+    Buttonv2 {
+        id: sideB3
+
+        property bool switcher
+
+        anchors.left: parent.left
+        anchors.leftMargin: parent.width/100
+        anchors.top: sideB2.bottom
+        anchors.topMargin: parent.width/80
+
+        width: sideB1.width
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor3"
+        fontHeight: 0.4
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+
+    Buttonv2 {
+        id: sideB4
+
+        property bool switcher
+
+        anchors.right: parent.right
+        anchors.rightMargin: parent.width/100
+        anchors.bottom: sideB2.top
+        anchors.bottomMargin: parent.width/80
+        radius: 20
+        width: sideB2.width
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor1"
+        fontHeight: 0.4
+
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+    Buttonv2 {
+        id: sideB5
+
+        property bool switcher
+
+        anchors.right: parent.right
+        anchors.rightMargin: parent.width/100
+        anchors.verticalCenter: parent.verticalCenter
+
+        width: parent.width / 18
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor2"
+        fontHeight: 0.4
+
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+    Buttonv2 {
+        id: sideB6
+
+        property bool switcher
+
+        anchors.right: parent.right
+        anchors.rightMargin: parent.width/100
+        anchors.top: sideB2.bottom
+        anchors.topMargin: parent.width/80
+
+        width: sideB1.width
+        height: width
+        color: switcher ? "#5caa15" : "#80c342"
+        text: "Motor3"
+        fontHeight: 0.4
+        onClicked: {
+            switcher = !switcher;
+            console.log("clocked 1"+switcher)
+        }
+    }
+
+
     Shape {
         id: bt1
 
-        width: (125/staticw)*image1.width
-        height: (125/statich)*image1.height
+        opacity:  0
+        width: (130/staticw)*image1.width
+        height: (130/statich)*image1.height
         x : (390/staticw)*image1.width
         y : (200/statich)*image1.height
 
@@ -21,15 +152,15 @@ Image {
             id: anim
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt1shape
-                property: "fillColor"
-                to: "red"
+                target: bt1
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt1shape
-                property: "fillColor"
-                to: "green"
+                target: bt1
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
         }
@@ -38,7 +169,7 @@ Image {
             onClicked: {
                 if(anim.running == true){
                     anim.running = false;
-                    bt1shape.fillColor = "white"
+                    bt1.opacity = 0
                 }else{
                     anim.running = true;
                 }
@@ -50,10 +181,12 @@ Image {
             id: bt1shape
 
             strokeWidth: 1
-            strokeColor: "red"
+            //strokeColor: "red"
             startX: 0; startY: 0
-            PathLine { x: (125/staticw)*image1.width; y: 0 }
-            PathLine { x: (125/staticw)*image1.width; y: (120/statich)*image1.height }
+            fillColor: "#a46baf"
+
+            PathLine { x: (130/staticw)*image1.width; y: 0 }
+            PathLine { x: (130/staticw)*image1.width; y: (118/statich)*image1.height }
             PathLine { x: 0; y: (125/staticw)*image1.width }
             PathLine { x: 0; y: 0 }
 
@@ -63,6 +196,7 @@ Image {
     Shape {
         id: bt2
 
+        opacity:  0
         width: (125/staticw)*image1.width
         height: (125/statich)*image1.height
         anchors.left: bt1.right
@@ -72,15 +206,15 @@ Image {
             id: anim2
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt2shape
-                property: "fillColor"
-                to: "red"
+                target: bt2
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt2shape
-                property: "fillColor"
-                to: "green"
+                target: bt2
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
         }
@@ -89,7 +223,7 @@ Image {
             onClicked: {
                 if(anim2.running == true){
                     anim2.running = false;
-                    bt2shape.fillColor = "white"
+                    bt2.opacity = 0
                 }else{
                     anim2.running = true;
                 }
@@ -99,8 +233,10 @@ Image {
 
         ShapePath {
             id :bt2shape
+
             strokeWidth: 1
-            strokeColor: "red"
+            //strokeColor: "red"
+            fillColor: "#fab17a"
             startX: 0; startY: 0
             PathLine { x: (125/staticw)*image1.width; y: 0 }
             PathLine { x: (125/staticw)*image1.width; y: (115/statich)*image1.height }
@@ -111,6 +247,7 @@ Image {
     Shape {
         id: bt3
 
+        opacity:  0
         width: (125/staticw)*image1.width
         height: (125/statich)*image1.height
         anchors.left: bt2.right
@@ -120,15 +257,15 @@ Image {
             id: anim3
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt3shape
-                property: "fillColor"
-                to: "red"
+                target: bt3
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt3shape
-                property: "fillColor"
-                to: "green"
+                target: bt3
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
         }
@@ -137,7 +274,7 @@ Image {
             onClicked: {
                 if(anim3.running == true){
                     anim3.running = false;
-                    bt3shape.fillColor = "white"
+                    bt3.opacity = 0
                 }else{
                     anim3.running = true;
                 }
@@ -148,9 +285,12 @@ Image {
         ShapePath {
             //               fillColor: "transparent"
             id : bt3shape
+
             strokeWidth: 1
-            strokeColor: "red"
+            //strokeColor: "red"
             startX: 0; startY: 0
+            fillColor: "#aae0f8"
+
             PathLine { x: (150/staticw)*image1.width; y: 0 }
             PathLine { x: (43/staticw)*image1.width; y: (113/statich)*image1.height }
             PathLine { x: 0; y: (115/statich)*image1.height }
@@ -160,6 +300,7 @@ Image {
     Shape {
         id: bt4
 
+        opacity:  0
         width: (315/staticw)*image1.width
         height: (91/statich)*image1.height
         x : (155/staticw)*image1.width
@@ -168,15 +309,15 @@ Image {
             id: anim4
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt4shape
-                property: "fillColor"
-                to: "red"
+                target: bt4
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt4shape
-                property: "fillColor"
-                to: "green"
+                target: bt4
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
         }
@@ -185,7 +326,7 @@ Image {
             onClicked: {
                 if(anim4.running == true){
                     anim4.running = false;
-                    bt4shape.fillColor = "white"
+                    bt4.opacity = 0
                 }else{
                     anim4.running = true;
                 }
@@ -196,8 +337,10 @@ Image {
         ShapePath {
             //               fillColor: "transparent"
             id : bt4shape
-            strokeColor: "red"
+
+            //strokeColor: "red"
             startX: 0; startY: 0
+            fillColor: "#fddf7f"
             PathLine { x: (310/staticw)*image1.width; y: (12/statich)*image1.height }
             PathLine { x: (315/staticw)*image1.width; y: (77/statich)*image1.height }
             PathLine { x: (30/staticw)*image1.width; y: (91/statich)*image1.height }
@@ -207,6 +350,7 @@ Image {
     Shape {
         id: bt5
 
+        opacity:  0
         width: (85/staticw)*image1.width
         height: (115/statich)*image1.height
         anchors.left: bt4.right
@@ -215,15 +359,15 @@ Image {
             id: anim5
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt5shape
-                property: "fillColor"
-                to: "red"
+                target: bt5
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt5shape
-                property: "fillColor"
-                to: "green"
+                target: bt5
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
         }
@@ -232,7 +376,7 @@ Image {
             onClicked: {
                 if(anim5.running == true){
                     anim5.running = false;
-                    bt5shape.fillColor = "white"
+                    bt5.opacity = 0
                 }else{
                     anim5.running = true;
                 }
@@ -243,8 +387,11 @@ Image {
         ShapePath {
             //               fillColor: "transparent"
             id : bt5shape
-            strokeColor: "blue"
+
+            //strokeColor: "blue"
             startX: (-5/staticw)*image1.width; startY: (10/statich)*image1.height
+            fillColor: "#f181b3"
+
             PathLine { x: (85/staticw)*image1.width; y: (5/statich)*image1.height }
             PathLine { x: (85/staticw)*image1.width; y: (115/statich)*image1.height }
             PathLine { x: (5/staticw)*image1.width; y: (115/statich)*image1.height }
@@ -254,6 +401,7 @@ Image {
     Shape {
         id: bt6
 
+        opacity:  0
         width: (125/staticw)*image1.width
         height: (125/statich)*image1.height
         anchors.left: bt5.right
@@ -262,15 +410,15 @@ Image {
             id: anim6
             loops: Animation.Infinite
             PropertyAnimation {
-                target: bt6shape
-                property: "fillColor"
-                to: "red"
+                target: bt6
+                property: "opacity"
+                to: 0
                 duration: 1000
             }
             PropertyAnimation {
-                target: bt6shape
-                property: "fillColor"
-                to: "green"
+                target: bt6
+                property: "opacity"
+                to: 1
                 duration: 1000
             }
         }
@@ -279,7 +427,7 @@ Image {
             onClicked: {
                 if(anim6.running == true){
                     anim6.running = false;
-                    bt6shape.fillColor = "white"
+                    bt6.opacity = 0
                 }else{
                     anim6.running = true;
                 }
@@ -290,8 +438,11 @@ Image {
         ShapePath {
             //               fillColor: "transparent"
             id : bt6shape
-            strokeColor: "red"
+
+            //strokeColor: "red"
             startX: (2/staticw)*image1.width; startY: 5
+            fillColor: "#91a550"
+
             PathLine { x: (90/staticw)*image1.width; y: 0}
             PathLine { x: (95/staticw)*image1.width; y: (115/statich)*image1.height }
             PathLine { x: (2/staticw)*image1.width; y: (115/statich)*image1.height }

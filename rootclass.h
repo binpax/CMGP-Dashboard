@@ -1,12 +1,14 @@
 #ifndef ROOTCLASS_H
 #define ROOTCLASS_H
 
+#include <syslog.h>
 #include <QProcess>
 #include <QtNetwork>
 #include "filedownloader.h"
 #include <QDebug>
 #include <QSerialPort>
 static constexpr int Version  = 1;
+void SyslogMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 class RootClass : public QObject
 {

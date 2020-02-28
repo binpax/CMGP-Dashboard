@@ -29,10 +29,10 @@ ApplicationWindow {
             text: qsTr("Dashboard");
         }
         TabButton {
-            text: qsTr("Config")
+            text: qsTr("PDF LIST")
         }
         TabButton {
-            text: qsTr("PDF LIST")
+            text: qsTr("Config")
         }
     }
 }

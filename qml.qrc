@@ -9,7 +9,6 @@
         <file>images/vues/2.png</file>
         <file>images/vues/MODEL.ai-page-001.png</file>
         <file>PdfList.qml</file>
-        <file>qml/main.qml</file>
         <file>img/icon_hres.png</file>
         <file>img/icon_lres.png</file>
         <file>img/icon_mres.png</file>
@@ -18,5 +17,6 @@
         <file>Slider.qml</file>
         <file>Circle.qml</file>
         <file>Button.qml</file>
+        <file>Buttonv2.qml</file>
     </qresource>
 </RCC>

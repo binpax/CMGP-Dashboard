@@ -6,20 +6,16 @@ Page {
     height: 400
 
     Label {
-        text: qsTr("You are on Page 2.")
+        width: 345
+        height: 237
+        text: "This is a configuration page, an update will be delivered sooner or later to bring it on, This solution was created by Ahmed ARIF in cooperation with Mohammed EL MANKIBY, feel free to ask if you have any questions, Cheers!"
+        wrapMode: Text.WordWrap
+        verticalAlignment: Text.AlignTop
+        anchors.verticalCenterOffset: 3
+        anchors.horizontalCenterOffset: 4
         anchors.centerIn: parent
     }
-
-    Image {
-        id: image
-        anchors.fill: parent
-        source: "images/vues/3.png"
-        fillMode: Image.PreserveAspectFit
-    }
 }
 
-/*##^##
-Designer {
-    D{i:2;anchors_height:100;anchors_width:100;anchors_x:318;anchors_y:233}
-}
-##^##*/
+
+
