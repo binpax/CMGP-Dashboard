@@ -25,11 +25,6 @@ Image {
         id1.text = image1.width
     }
 
-    Component.onCompleted: {
-
-
-    }
-
     Buttonv2 {
         id: sideB1
 
