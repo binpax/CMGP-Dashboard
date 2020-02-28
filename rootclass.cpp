@@ -72,11 +72,6 @@ RootClass::RootClass(){
 
 void RootClass::buttonClick(unsigned int id, bool state){
     qInfo("buttonClick");
-    QRect  screenGeometry = screen->geometry();
-    int height = screenGeometry.height();
-    int width = screenGeometry.width();
-    QString dbg = "main height"+QString::number(height) + " +++++++ " + QString::number(width);
-    qDebug(dbg.toUtf8());
 
     if (id > 16 ){
         updateOutput("/dev/ttyUSB2",1<<(id-16),!state);

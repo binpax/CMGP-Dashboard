@@ -13,10 +13,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<pdf_viewer::PdfDocument>("PdfViewing", 1, 0, "PdfDocument");
     qmlRegisterType<pdf_viewer::PdfViewer>("PdfViewing", 1, 0, "PdfViewer");
-
-
     QGuiApplication app(argc, argv);
-    screen = QGuiApplication::primaryScreen();
     RootClass rootclass;
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:/");
