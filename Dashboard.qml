@@ -28,6 +28,7 @@ Image {
     Buttonv2 {
         id: sideB1
 
+        visible: false
         property bool switcher
 
         anchors.left: parent.left
@@ -50,6 +51,7 @@ Image {
     Buttonv2 {
         id: sideB2
 
+        visible: false
         property bool switcher
 
         anchors.left: parent.left
@@ -71,6 +73,7 @@ Image {
     Buttonv2 {
         id: sideB3
 
+        visible: false
         property bool switcher
 
         anchors.left: parent.left
@@ -93,6 +96,7 @@ Image {
     Buttonv2 {
         id: sideB4
 
+        visible: false
         property bool switcher
 
         anchors.right: parent.right
@@ -115,6 +119,7 @@ Image {
     Buttonv2 {
         id: sideB5
 
+        visible: false
         property bool switcher
 
         anchors.right: parent.right
@@ -136,6 +141,7 @@ Image {
     Buttonv2 {
         id: sideB6
 
+        visible: false
         property bool switcher
 
         anchors.right: parent.right
@@ -153,7 +159,6 @@ Image {
             console.log("clocked 1"+switcher)
         }
     }
-
 
     Shape {
         id: bt1
