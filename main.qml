@@ -26,13 +26,13 @@ ApplicationWindow {
         currentIndex: swipeView.currentIndex
 
         TabButton {
-            text: qsTr("Dashboard");
+            text: qsTr("Vue globale");
         }
         TabButton {
-            text: qsTr("PDF LIST")
+            text: qsTr("Resources")
         }
         TabButton {
-            text: qsTr("Config")
+            text: qsTr("Configuration")
         }
     }
 }
