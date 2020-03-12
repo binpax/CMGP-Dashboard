@@ -11,8 +11,8 @@ Page {
         text: "This is a configuration page, an update will be delivered sooner or later to bring it on, This solution was created by Ahmed ARIF in cooperation with Mohammed EL MANKIBY, feel free to ask if you have any questions, Cheers!"
         wrapMode: Text.WordWrap
         verticalAlignment: Text.AlignTop
-        anchors.verticalCenterOffset: 3
-        anchors.horizontalCenterOffset: 4
+        anchors.verticalCenterOffset: 44
+        anchors.horizontalCenterOffset: -19
         anchors.centerIn: parent
     }
 }

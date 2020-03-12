@@ -19,5 +19,9 @@
         <file>Button.qml</file>
         <file>Buttonv2.qml</file>
         <file>img/MODEL1.jpg</file>
+        <file>Vue2.qml</file>
+        <file>images/vues/TAFOUKI_PDF-1.png</file>
+        <file>ImageViewer.qml</file>
+        <file>ImgList.qml</file>
     </qresource>
 </RCC>

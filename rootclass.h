@@ -19,9 +19,12 @@ class RootClass : public QObject
     QString updateLink;
 public:
     QStringList dataList;
+    QStringList imgList;
 
     RootClass();
     Q_INVOKABLE QStringList getQStringList(){ return dataList;}
+    Q_INVOKABLE QStringList getImgList(){ return imgList;}
+
     Q_INVOKABLE void buttonClick(unsigned int id, bool state);
     Q_INVOKABLE QString pdfClick(QString name);
 };

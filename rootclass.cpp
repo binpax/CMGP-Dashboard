@@ -57,6 +57,7 @@ RootClass::RootClass(){
     updateOutput("/dev/ttyUSB0",1,true);
 
     auto folder_home = QDir::home();
+
     if(folder_home.cd("pdf")){
         qInfo("Info log message from Qt test program");
         qDebug()<<"ok ";
@@ -66,6 +67,17 @@ RootClass::RootClass(){
             auto fullpdfpath = var.fileName();
             qDebug()<<fullpdfpath;
             dataList.append(fullpdfpath);
+        }
+    }
+    if(folder_home.cd("../img")){
+        qInfo("Info log message from Qt test program");
+        qDebug()<<"ok ";
+        folder_home.setNameFilters(QStringList()<<"*.png");
+        auto list = folder_home.entryInfoList();
+        foreach (auto var, list) {
+            auto fullpdfpath = var.fileName();
+            qDebug()<<fullpdfpath;
+            imgList.append(fullpdfpath);
         }
     }
 }

@@ -15,6 +15,8 @@ ApplicationWindow {
         currentIndex: tabBar.currentIndex
         Dashboard{
         }
+        Vue2{
+        }
         PdfList {
         }
         Page2Form {
@@ -27,6 +29,9 @@ ApplicationWindow {
 
         TabButton {
             text: qsTr("Vue globale");
+        }
+        TabButton {
+            text: qsTr("Vue Secondaire");
         }
         TabButton {
             text: qsTr("Resources")
